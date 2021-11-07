@@ -1,4 +1,4 @@
-lista = ['jas','tomek']
+lista = ['jas','tomek','stas','jacek','marek']
 
 def print_all_names(names):
     for a in names:
