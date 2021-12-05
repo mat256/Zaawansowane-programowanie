@@ -12,7 +12,7 @@ book2 = Book(library2, "30.05.1992", "John", "Flanagan", 220)
 book3 = Book(library1, "12.06.2001", "Andrzej", "Sapkowski", 231)
 
 employee1 = Employee("Jan", "Kowalski", "12.04.2019", "12.12.1976", "London", "South Street", 12343, 987323278)
-employee2 = Employee("Adam", "Nowak", "30.04.2003", "12.12.1990", "London", "That Street", 123132,131323)
+employee2 = Employee("Adam", "Nowak", "30.04.2003", "12.12.1990", "London", "That Street", 123132, 131323)
 student1 = Student("Marek", 30)
 
 order1 = Order(employee2, student1, book1, "12.03.18")
