@@ -34,23 +34,23 @@ class Tags:
         self.timestamp = timestamp
 
 
+def what_class(x: str, a):
+    if "links" in x:
+        return Links(*a)
+    elif ("movie" in x):
+        return Movie(*a)
+    elif ("tag" in x):
+        return Tags(*a)
+    elif ('rating' in x):
+        return Ratings(*a)
+
+
 def data_new(x: str):
     with open(x, encoding="utf8") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
-        # print(csv_reader.__next__())
-        opis = csv_reader.__next__()
-        if opis[1] == 'title':
-            return [Movie(row[0], row[1], row[2]).__dict__ for row in csv_reader]
-            # for row in csv_reader:
-            # lista.append(Movie(row[0], row[1], row[2]).__dict__)
-        elif (opis[2] == 'rating'):
-            return [Ratings(row[0], row[1], row[2], row[3]).__dict__ for row in csv_reader]
-
-        elif (opis[1] == 'imdbId'):
-            return [Links(row[0], row[1], row[2]).__dict__ for row in csv_reader]
-
-        elif (opis[2] == 'tag'):
-            return [Tags(row[0], row[1], row[2], row[3]).__dict__ for row in csv_reader]
+        csv_reader.__next__()
+        return [what_class(x, row).__dict__ for row in csv_reader]
 
 
 # data_new('movies.csv')
+# print(data_new('links.csv'))
